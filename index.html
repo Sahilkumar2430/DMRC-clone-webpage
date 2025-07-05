@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DMRC Clone</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <li><a href="complaint.html" target="_blank">Vigilance Complaint Portal</a></li>
+    <link rel="icon" href="dmrc-logo.png" type="image/png">
+</head>
+
+<body>
+    <header class="top-bar">
+        <div class="social-icons">
+            <span>Follow us on :</span>
+            <img src="facebook-icon.png" alt="Facebook">
+            <img src="instagram-icon.png" alt="Instagram">
+            <img src="playstore-icon.png" alt="Play Store">
+            <img src="apple-icon.png" alt="Apple Store">
+        </div>
+    </header>
+
+    <nav class="main-nav">
+        <div class="logo">
+            <img src="dmrc-logo.png" alt="DMRC Logo">
+            <h1>DELHI METRO</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Recharge</a></li>
+            <li><a href="#">Facilities</a></li>
+            <li><a href="#">Network</a></li>
+            <li><a href="#">Security</a></li>
+            <li><a href="#">Help & Contact</a></li>
+            <li><a href="#">Vigilance Complaint Portal</a></li>
+            <li><a href="#">FAQ's</a></li>
+        </ul>
+        <div class="helpline">
+            <span>24 Hour DMRC Helpline nos.</span>
+            <strong>155370</strong>
+        </div>
+        <div class="search-box">
+            <input type="text" placeholder="Search">
+            <button><img src="search-icon.png" alt="Search"></button>
+        </div>
+        <div class="status-btn">
+            <button>Click here for Service Status</button>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="plan-journey">
+            <h2><img src="journey-icon.png"> Plan Your Journey</h2>
+            <a href="#">Interactive Map</a>
+            <div class="inputs">
+                <label>From</label>
+                <select><option>Type station name</option></select>
+                <label>To</label>
+                <select><option>Type station name</option></select>
+                <label>Leaving</label>
+                <button>Now</button>
+                <a href="#">Change Time</a>
+            </div>
+            <div class="filters">
+                <button class="shortest-route">Shortest Route</button>
+                <button class="minimum-interchange">Minimum Interchange</button>
+                <button class="route-fare">Show Route & Fare</button>
+            </div>
+
+            <section class="metro-live-map">
+    <h2>Metro Live Map</h2>
+    <div class="map-container">
+        <!-- Replace this iframe with an actual live map embed if available -->
+        <iframe 
+            src="https://www.google.com/maps/d/embed?mid=1Yyg0UOZKyYaXmwMwTqgQf4b7ZdPIkY0&ehbc=2E312F" 
+            width="100%" 
+            height="480" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+    <p class="note">* This is a sample embedded map. Live train tracking requires integration with DMRC APIs or third-party tools.</p>
+</section>
+
+            <section class="service-status">
+    <h2>Metro Service Status</h2>
+    <div class="metro-lines">
+        <div class="line red"><span>Red Line</span></div>
+        <div class="connector"></div>
+        <div class="line blue"><span>Blue Line</span></div>
+        <div class="connector"></div>
+        <div class="line yellow"><span>Yellow Line</span></div>
+        <div class="connector"></div>
+        <div class="line green"><span>Green Line</span></div>
+        <div class="connector"></div>
+        <div class="line pink"><span>Pink Line</span></div>
+        <div class="connector"></div>
+        <div class="line orange"><span>Orange Line</span></div>
+    </div>
+
+    <div class="line-details">
+        <div class="line-box red">
+            <h3>Red Line</h3>
+            <p>Rithala to Shaheed Sthal. Status: <strong>Operational</strong></p>
+        </div>
+        <div class="line-box blue">
+            <h3>Blue Line</h3>
+            <p>Dwarka Sector 21 to Noida City Centre / Vaishali. Status: <strong>Operational</strong></p>
+        </div>
+        <div class="line-box yellow">
+            <h3>Yellow Line</h3>
+            <p>Samaypur Badli to HUDA City Centre. Status: <strong>Operational</strong></p>
+        </div>
+        <div class="line-box green">
+            <h3>Green Line</h3>
+            <p>Inderlok / Kirti Nagar to Brigadier Hoshiar Singh. Status: <strong>Under Maintenance</strong></p>
+        </div>
+        <div class="line-box pink">
+            <h3>Pink Line</h3>
+            <p>Majlis Park to Shiv Vihar. Status: <strong>Operational</strong></p>
+        </div>
+        <div class="line-box orange">
+            <h3>Orange Line</h3>
+            <p>New Delhi to Dwarka Sector 21 (Airport Express). Status: <strong>Delayed</strong></p>
+        </div>
+    </div>
+</section>
+
+        </section>
+
+        <section class="stats">
+            <div>
+                <h3>394</h3>
+                <p>Total Network Length (km)</p>
+            </div>
+            <div>
+                <h3>12</h3>
+                <p>Total no of Lines</p>
+            </div>
+            <div>
+                <h3>289</h3>
+                <p>Total no of Stations</p>
+            </div>
+        </section>
+
+        <section class="interactive-map">
+            <h3>Interactive Metro Map</h3>
+            <p>Plan your journey using interactive and clickable map.</p>
+            <img src="metro-map.png" alt="Metro Map">
+        </section>
+
+        <section class="notices">
+            <h3>Notices & Alerts</h3>
+            <article>
+                <h4>17/06/2025</h4>
+                <p>DMRC SIGNS MoU WITH MONASH UNIVERSITY, MELBOURNE...</p>
+            </article>
+            <article>
+                <h4>07/06/2025</h4>
+                <p>DMRC COMPLETES ONE MORE TUNNELLING MILESTONE...</p>
+            </article>
+            <article>
+                <h4>05/06/2025</h4>
+                <p>DMRC’S MANAGING DIRECTOR HONOURED AS...</p>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Delhi Metro Rail Corporation</p>
+    </footer>
+    <div id="route-result" style="margin-top: 20px; font-weight: 500; color: #444;"></div>
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

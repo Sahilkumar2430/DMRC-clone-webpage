@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vigilance Complaint Portal - DMRC</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #d32f2f;
+            text-align: center;
+        }
+        form {
+            background: #fff;
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        form label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: 500;
+        }
+        form input, form select, form textarea {
+            width: 100%;
+            padding: 8px 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        form button {
+            background: #d32f2f;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        table {
+            width: 100%;
+            background: #fff;
+            border-collapse: collapse;
+            margin-top: 20px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+        table th {
+            background: #d32f2f;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+<h1>DMRC Vigilance Complaint Portal</h1>
+
+<form id="complaintForm">
+    <label for="name">Name*</label>
+    <input type="text" id="name" required>
+
+    <label for="email">Email*</label>
+    <input type="email" id="email" required>
+
+    <label for="metroLine">Metro Line*</label>
+    <select id="metroLine" required>
+        <option value="">Select Line</option>
+        <option>Red Line</option>
+        <option>Blue Line</option>
+        <option>Yellow Line</option>
+        <option>Green Line</option>
+        <option>Pink Line</option>
+        <option>Orange Line</option>
+    </select>
+
+    <label for="complaint">Complaint Description*</label>
+    <textarea id="complaint" rows="5" required></textarea>
+
+    <button type="submit">Submit Complaint</button>
+</form>
+
+<h2 style="text-align:center;">Submitted Complaints</h2>
+<table id="complaintTable">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Metro Line</th>
+            <th>Complaint</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+<script>
+    const form = document.getElementById("complaintForm");
+    const tableBody = document.querySelector("#complaintTable tbody");
+
+    // Load complaints on page load
+    window.onload = () => {
+        const complaints = JSON.parse(localStorage.getItem("dmrcComplaints") || "[]");
+        complaints.forEach(addComplaintRow);
+    };
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const metroLine = document.getElementById("metroLine").value;
+        const complaint = document.getElementById("complaint").value.trim();
+
+        if (!name || !email || !metroLine || !complaint) {
+            alert("Please fill in all required fields.");
+            return;
+        }
+
+        const newComplaint = {
+            name,
+            email,
+            metroLine,
+            complaint,
+            date: new Date().toLocaleString()
+        };
+
+        // Store in localStorage
+        const complaints = JSON.parse(localStorage.getItem("dmrcComplaints") || "[]");
+        complaints.push(newComplaint);
+        localStorage.setItem("dmrcComplaints", JSON.stringify(complaints));
+
+        addComplaintRow(newComplaint);
+        form.reset();
+        alert("Complaint submitted successfully.");
+    });
+
+    function addComplaintRow({ name, email, metroLine, complaint, date }) {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+            <td>${name}</td>
+            <td>${email}</td>
+            <td>${metroLine}</td>
+            <td>${complaint}</td>
+            <td>${date}</td>
+        `;
+        tableBody.appendChild(row);
+    }
+</script>
+
+</body>
+</html>
+<!-- End of code snippet -->
